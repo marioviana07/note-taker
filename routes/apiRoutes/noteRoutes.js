@@ -1,10 +1,14 @@
 const { filterByQuery, findById, createNewNote, deleteNote, validateNote } = require('../../lib/notes');
-const { notes } = require('../../db/db.json');
+var { notes } = require('../../db/db.json');
 //const { resolveSoa } = require('dns');
 console.log("NOTES", notes)
 const router = require('express').Router();
 
 router.get('/notes', (req, res) => {
+
+    notes = require('../../db/db.json').notes
+    console.log("all notes")
+    console.log(notes)
     let results = notes;
     if (req.query) {
         results = filterByQuery(req.query, results);
@@ -13,6 +17,9 @@ router.get('/notes', (req, res) => {
 });
 
 router.get('/notes/:id', (req, res) => {
+    //update the value of notes before you return them.
+    //Which is to say, read the db.json files into notes again.
+
     const result = findById(req.params.id, notes);
     if (result) {
         res.json(result);
@@ -48,7 +55,12 @@ router.post('/notes', (req, res) => {
 // });
 
 router.delete('/notes/:id', function(req, res) {
+    console.log("Deleting note with id: " + req.params.id)
+    console.log("Notes before delete: ")
+    console.log(notes)
     const deletedNote = deleteNote({ id: req.params.id }, notes);
+    console.log("note after delete: ")
+    console.log(notes)
     const result = {
         message: 'bad request',
         status_code: 400,

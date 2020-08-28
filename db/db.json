@@ -1,24 +1,19 @@
 {
   "notes": [
     {
-      "title": "Test Title",
-      "text": "Test text",
-      "id": "test_id"
-    },
-    {
-      "title": "Tony",
-      "text": "sn ;jsdn",
-      "id": "1"
-    },
-    {
-      "title": "Anthony",
-      "text": "Four",
-      "id": "4"
-    },
-    {
       "title": "Santiago",
       "text": "Five",
       "id": "5"
+    },
+    {
+      "title": "Anthony",
+      "text": "hsdjh",
+      "id": "1"
+    },
+    {
+      "title": "Patty",
+      "text": "bfkj",
+      "id": "2"
     }
   ]
 }
