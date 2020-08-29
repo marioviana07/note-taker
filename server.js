@@ -3,7 +3,7 @@ const PORT = process.env.PORT || 3007;
 const fs = require('fs');
 const path = require('path');
 
-var dbPath = path.join(__dirname, "db/db.json");
+var dbPath = path.join(__dirname, "/db/db.json");
 if (!fs.existsSync(dbPath)) {
     fs.mkdirSync(path.join(__dirname, 'db'), { recursive: true });
     fs.writeFileSync(dbPath,
